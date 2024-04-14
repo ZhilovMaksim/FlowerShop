@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.flowershop.HelloController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="0.0">
+         <children>
+            <AnchorPane fx:id="lg_right" layoutX="300.0" prefHeight="400.0" prefWidth="300.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="38.0" layoutY="51.0" styleClass="head-label" stylesheets="@login.css" text="Login Account" textFill="#146366">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="lg_inputLogin" layoutX="55.0" layoutY="149.0" prefHeight="30.0" prefWidth="220.0" promptText="Login" style="-fx-background-radius: 10; -fx-background-color: #fff;" styleClass="input-login-password" stylesheets="@login.css">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <PasswordField fx:id="lg_inputPass" layoutX="55.0" layoutY="193.0" prefHeight="30.0" prefWidth="220.0" promptText="Password" styleClass="input-login-password" stylesheets="@login.css">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </PasswordField>
+                  <Button fx:id="lg_loginBtn" layoutX="55.0" layoutY="255.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="220.0" styleClass="login-btn" stylesheets="@login.css" text="LOGIN" textFill="#1a3b6e" />
+                  <Hyperlink fx:id="lg_forgotPass" layoutX="55.0" layoutY="231.0" text="Forgot password?" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="register" prefHeight="400.0" prefWidth="300.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="38.0" layoutY="51.0" styleClass="head-label" stylesheets="@login.css" text="Register Account" textFill="#146366">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="rg_loginBtn" layoutX="55.0" layoutY="103.0" prefHeight="30.0" prefWidth="220.0" promptText="Login" style="-fx-background-radius: 10; -fx-background-color: #fff;" styleClass="input-login-password" stylesheets="@login.css">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <PasswordField fx:id="rg_passwordBtn" layoutX="55.0" layoutY="151.0" prefHeight="30.0" prefWidth="220.0" promptText="Password" styleClass="input-login-password" stylesheets="@login.css">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </PasswordField>
+                  <ComboBox fx:id="rg_question" layoutX="55.0" layoutY="200.0" prefHeight="30.0" prefWidth="220.0" promptText="Question" />
+                  <TextField fx:id="rg_answer" layoutX="55.0" layoutY="244.0" prefHeight="30.0" prefWidth="220.0" promptText="Answer" style="-fx-background-radius: 10; -fx-background-color: #fff;" styleClass="input-login-password" stylesheets="@login.css">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="rg_singUpBtn" layoutX="55.0" layoutY="287.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="220.0" styleClass="login-btn" stylesheets="@login.css" text="SIGN UP" textFill="#1a3b6e" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="side" prefHeight="400.0" prefWidth="300.0" styleClass="gradient" stylesheets="@login.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-4.0" layoutY="287.0" prefHeight="30.0" prefWidth="300.0" text="Create Account" textFill="#666e4b">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="side_createAccBtn" layoutX="40.0" layoutY="332.0" mnemonicParsing="false" onAction="#switchSides" prefHeight="43.0" prefWidth="220.0" styleClass="create-new-acc" stylesheets="@login.css" text="CREATE NEW ACCOUNT" textFill="#0c5f79" AnchorPane.bottomAnchor="24.799999999999997" />
+                  <Button fx:id="side_alrHavAcc" layoutX="40.0" layoutY="332.0" mnemonicParsing="false" onAction="#switchSides" prefHeight="43.0" prefWidth="220.0" styleClass="create-new-acc" stylesheets="@login.css" text="ALREADY HAVE AN ACCOUNT" textFill="#0c5f79" visible="false" AnchorPane.bottomAnchor="24.799999999999997">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="71.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/flower-pot.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutY="211.0" prefHeight="26.0" prefWidth="300.0" text="Flower Shop Management System" textFill="#666e4b">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

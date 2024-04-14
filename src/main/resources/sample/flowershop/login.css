@@ -1,0 +1,40 @@
+.gradient {
+    -fx-background-color: linear-gradient(to bottom right, #E0EAFC, #CFDEF3);
+}
+
+.head-label {
+    -fx-border-color: #CFDEF3;
+    -fx-border-width: 0 0 0 8px;
+}
+
+.login-btn {
+    -fx-background-color:  #CFDEF3;
+    -fx-background-radius: 10px;
+}
+.login-btn:hover {
+    -fx-cursor: hand;
+    -fx-background-color: #587db9;
+    -fx-text-fill: #fff;
+}
+
+.create-new-acc {
+    -fx-background-color: #fff;
+    -fx-background-radius: 10;
+}
+
+.create-new-acc:hover {
+    -fx-cursor: hand;
+    -fx-background-color: #587db9;
+    -fx-text-fill: #fff;
+}
+
+.input-login-password {
+    -fx-background-color: #fff;
+    -fx-border-width: 0 0 1.5px 0;
+    -fx-border-color: #CFDEF3;
+}
+
+.input-login-password:focused {
+    -fx-border-color: #587db9;
+    -fx-transition: -fx-border-color 1s ease;
+}
