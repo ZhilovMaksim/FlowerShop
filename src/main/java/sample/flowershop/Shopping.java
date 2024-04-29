@@ -6,11 +6,21 @@ class Product{
     private String name;
     private double price;
     private String description;
+
+    private String urlImage;
     public Product(int id, String name, double price, String description){
         this.id = id;
         this.name = name;
         this.price = price;
         this.description = description;
+    }
+
+    public String getUrlImage() {
+        return urlImage;
+    }
+
+    public void setUrlImage(String urlImage) {
+        this.urlImage = urlImage;
     }
 
     public double getPrice() {
