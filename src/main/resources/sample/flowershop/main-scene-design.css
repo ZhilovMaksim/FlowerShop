@@ -69,15 +69,31 @@
     -fx-text-fill: #fff;
 }
 
-.cart_add-to-shop {
+.cart_add-to-shop-btn {
+    -fx-background-color: #fff;
     -fx-text-fill: #ff8f52;
     -fx-font-family: "Roboto Light";
+}
+
+.cart_add-to-shop-btn:hover {
+    -fx-cursor: hand;
 }
 
 /*.cart_add-to-shop:hover {*/
 /*    -fx-font-style: underline;*/
 /*}*/
 
+.cart_shadow {
+    -fx-effect: dropShadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0.1, 2, 8);
+}
+
+.shopping-cart_empty {
+    -fx-background-color: #fff;
+    -fx-background-radius: 5px;
+    -fx-effect: dropShadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0.1, 2, 5);
+}
+
 cart {
     -fx-font-family: "Roboto Light";
 }
+

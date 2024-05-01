@@ -1,14 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
 
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="150.0" prefWidth="544.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.flowershop.ShoppingCartController">
+   <children>
+      <HBox alignment="CENTER_LEFT" layoutX="1.0" layoutY="1.0" maxHeight="-Infinity" prefHeight="150.0" prefWidth="544.0" spacing="10.0">
+         <children>
+            <ImageView fx:id="shoppingCart_img" fitHeight="150.0" fitWidth="159.0" pickOnBounds="true" preserveRatio="true" />
+            <VBox prefHeight="150.0" prefWidth="283.0">
+               <children>
+                  <Label fx:id="shoppingCart_name" alignment="TOP_LEFT" prefHeight="100.0" prefWidth="126.0" text="Sun flower">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <HBox>
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="57.0" text="unit price" />
+                        <Label fx:id="shoppingCart_price" text="10$" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_RIGHT" prefHeight="150.0" prefWidth="108.0">
+               <children>
+                  <ImageView fx:id="shoppingCart_deleteItem" fitHeight="16.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/delete_item.png" />
+                     </image>
+                  </ImageView>
+                  <HBox alignment="TOP_RIGHT" spacing="3.0">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="30.0" text="Total">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="shoppingCart_total" text="10$">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="100.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
 </AnchorPane>

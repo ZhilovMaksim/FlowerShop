@@ -6,7 +6,6 @@ class Product{
     private String name;
     private double price;
     private String description;
-
     private String urlImage;
     public Product(int id, String name, double price, String description){
         this.id = id;
@@ -56,6 +55,10 @@ class ShoppingCart {
 
     public ShoppingCart() {
         this.items = new ArrayList<>();
+    }
+
+    public List<Product> getItems() {
+        return items;
     }
 
     public void addProduct(Product product) {
