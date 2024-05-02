@@ -36,7 +36,7 @@
                                     <Image url="@img/home%20(1).png" />
                                  </image>
                               </ImageView>
-                              <Label fx:id="homeBtn" alignment="CENTER" onMouseClicked="#onClickHomeBtn" prefHeight="60.0" prefWidth="206.0" styleClass="left-labels" stylesheets="@main-scene-design.css" text="Home" textFill="#ff8f52">
+                              <Label fx:id="homeBtn" alignment="CENTER" onMouseClicked="#onClickHomeBtn" prefHeight="60.0" prefWidth="206.0" styleClass="left-labels" stylesheets="@main-scene-design.css" text="Home">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
@@ -174,28 +174,6 @@
          <center>
             <StackPane BorderPane.alignment="CENTER">
                <children>
-                  <ScrollPane fx:id="shoppingCartPane" prefHeight="200.0" prefWidth="200.0">
-                     <content>
-                        <AnchorPane prefHeight="705.0" prefWidth="915.0" style="-fx-background-color: #f2f2f2;">
-                           <children>
-                              <VBox layoutX="38.0" layoutY="32.0" prefHeight="338.0" prefWidth="574.0" styleClass="shopping-cart_empty" stylesheets="@main-scene-design.css">
-                                 <children>
-                                    <Label prefHeight="18.0" prefWidth="73.0" text="Your cart">
-                                       <VBox.margin>
-                                          <Insets bottom="10.0" left="30.0" top="25.0" />
-                                       </VBox.margin>
-                                    </Label>
-                                    <VBox fx:id="shoppingCart_container" prefHeight="154.0" prefWidth="544.0">
-                                       <VBox.margin>
-                                          <Insets left="30.0" />
-                                       </VBox.margin>
-                                    </VBox>
-                                 </children>
-                              </VBox>
-                           </children>
-                        </AnchorPane>
-                     </content>
-                  </ScrollPane>
                   <ScrollPane fx:id="shoppingCart_emty" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" vbarPolicy="NEVER" visible="false">
                      <content>
                         <AnchorPane prefHeight="646.0" prefWidth="926.0" style="-fx-background-color: #f2f2f2;">
@@ -213,7 +191,126 @@
                         </AnchorPane>
                      </content>
                   </ScrollPane>
-                  <ScrollPane fx:id="homePage" maxHeight="-Infinity" prefHeight="1000.0" prefWidth="200.0" style="-fx-background-color: #dadada;" visible="false">
+                  <ScrollPane fx:id="shoppingCartPane" prefHeight="200.0" prefWidth="200.0" visible="false">
+                     <content>
+                        <AnchorPane prefHeight="705.0" prefWidth="915.0" style="-fx-background-color: #f2f2f2;">
+                           <children>
+                              <VBox layoutX="38.0" layoutY="32.0" prefHeight="338.0" prefWidth="574.0" spacing="20.0" styleClass="shopping-cart_empty" stylesheets="@main-scene-design.css">
+                                 <children>
+                                    <Label prefHeight="18.0" prefWidth="73.0" text="Your cart">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="30.0" top="25.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <VBox fx:id="shoppingCart_container" prefHeight="150.0" prefWidth="544.0">
+                                       <VBox.margin>
+                                          <Insets left="30.0" />
+                                       </VBox.margin>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                              <AnchorPane layoutX="652.0" layoutY="32.0" prefHeight="84.0" prefWidth="238.0" style="-fx-background-color: #fff; -fx-background-radius: 5;" styleClass="cart_shadow" stylesheets="@main-scene-design.css">
+                                 <children>
+                                    <VBox layoutX="19.0" layoutY="4.0">
+                                       <children>
+                                          <HBox prefHeight="27.0" prefWidth="200.0">
+                                             <children>
+                                                <Label fx:id="subtotalForItems" prefHeight="27.0" prefWidth="124.0" text="Subtotal for 3 items: ">
+                                                   <font>
+                                                      <Font size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="totalPrice" prefHeight="30.0" prefWidth="28.0" text="60$">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <Button layoutX="15.0" layoutY="41.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="215.0" styleClass="checkout-btn" stylesheets="@main-scene-design.css" text="Checkout" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+                  <ScrollPane fx:id="shopPage" prefHeight="200.0" prefWidth="200.0" visible="false">
+                     <content>
+                        <AnchorPane prefHeight="1000.0" prefWidth="912.0" style="-fx-background-color: #f2f2f2;">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" layoutX="29.0" layoutY="27.0" prefHeight="62.0" prefWidth="854.0" style="-fx-background-color: #fff; -fx-background-radius: 8;">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="76.0" prefWidth="248.0">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="18.0" prefWidth="72.0" spacing="5.0">
+                                             <children>
+                                                <ImageView fitHeight="21.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@img/filter-icon.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label text="Filtering" />
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets left="15.0" />
+                                             </HBox.margin>
+                                          </HBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="38.0" prefWidth="324.0" styleClass="search-bar" stylesheets="@main-scene-design.css">
+                                       <children>
+                                          <TextField maxHeight="-Infinity" prefHeight="27.0" prefWidth="286.0" promptText="Search...." styleClass="search-bar-input" stylesheets="@main-scene-design.css" />
+                                          <Pane prefHeight="38.0" prefWidth="46.0" style="-fx-background-color: #ff8f52;" styleClass="search-bar-icon" stylesheets="@main-scene-design.css">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                             <children>
+                                                <ImageView fitHeight="23.0" fitWidth="28.0" layoutX="8.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@img/my-search-icon-32px.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="76.0" prefWidth="283.0">
+                                       <children>
+                                          <HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" prefHeight="22.0" prefWidth="59.0" spacing="5.0">
+                                             <children>
+                                                <ImageView fitHeight="14.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@img/arrow-down-short-wide-solid%201.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label text="Cheep" />
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets right="15.0" />
+                                             </HBox.margin>
+                                          </HBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </HBox>
+                              <AnchorPane layoutX="29.0" layoutY="114.0" prefHeight="590.0" prefWidth="854.0" AnchorPane.topAnchor="114.0">
+                                 <children>
+                                    <GridPane fx:id="cart_Container" hgap="20.0" layoutY="1.0" prefHeight="254.0" prefWidth="0.0" vgap="20.0" AnchorPane.topAnchor="1.0">
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                           </children></AnchorPane>
+                     </content>
+                  </ScrollPane>
+                  <ScrollPane fx:id="homePage" maxHeight="-Infinity" prefHeight="1000.0" prefWidth="200.0" style="-fx-background-color: #dadada;">
                      <content>
                         <AnchorPane prefHeight="1000.0" prefWidth="912.0" style="-fx-background-color: #dadada;">
                            <children>
@@ -289,77 +386,6 @@
                               <HBox fx:id="bestSelers_container" layoutX="20.0" layoutY="447.0" prefHeight="277.0" prefWidth="200.0" spacing="10.0" />
                            </children>
                         </AnchorPane>
-                     </content>
-                  </ScrollPane>
-                  <ScrollPane fx:id="shopPage" prefHeight="200.0" prefWidth="200.0" visible="false">
-                     <content>
-                        <AnchorPane prefHeight="1000.0" prefWidth="912.0" style="-fx-background-color: #f2f2f2;">
-                           <children>
-                              <HBox alignment="CENTER_LEFT" layoutX="29.0" layoutY="27.0" prefHeight="62.0" prefWidth="854.0" style="-fx-background-color: #fff; -fx-background-radius: 8;">
-                                 <children>
-                                    <HBox alignment="CENTER_LEFT" prefHeight="76.0" prefWidth="248.0">
-                                       <children>
-                                          <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="18.0" prefWidth="72.0" spacing="5.0">
-                                             <children>
-                                                <ImageView fitHeight="21.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
-                                                   <image>
-                                                      <Image url="@img/filter-icon.png" />
-                                                   </image>
-                                                </ImageView>
-                                                <Label text="Filtering" />
-                                             </children>
-                                             <HBox.margin>
-                                                <Insets left="15.0" />
-                                             </HBox.margin>
-                                          </HBox>
-                                       </children>
-                                    </HBox>
-                                    <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="38.0" prefWidth="324.0" styleClass="search-bar" stylesheets="@main-scene-design.css">
-                                       <children>
-                                          <TextField maxHeight="-Infinity" prefHeight="27.0" prefWidth="286.0" promptText="Search...." styleClass="search-bar-input" stylesheets="@main-scene-design.css" />
-                                          <Pane prefHeight="38.0" prefWidth="46.0" style="-fx-background-color: #ff8f52;" styleClass="search-bar-icon" stylesheets="@main-scene-design.css">
-                                             <HBox.margin>
-                                                <Insets left="5.0" />
-                                             </HBox.margin>
-                                             <children>
-                                                <ImageView fitHeight="23.0" fitWidth="28.0" layoutX="8.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
-                                                   <image>
-                                                      <Image url="@img/my-search-icon-32px.png" />
-                                                   </image>
-                                                </ImageView>
-                                             </children>
-                                          </Pane>
-                                       </children>
-                                    </HBox>
-                                    <HBox alignment="CENTER_RIGHT" prefHeight="76.0" prefWidth="283.0">
-                                       <children>
-                                          <HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" prefHeight="22.0" prefWidth="59.0" spacing="5.0">
-                                             <children>
-                                                <ImageView fitHeight="14.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
-                                                   <image>
-                                                      <Image url="@img/arrow-down-short-wide-solid%201.png" />
-                                                   </image>
-                                                </ImageView>
-                                                <Label text="Cheep" />
-                                             </children>
-                                             <HBox.margin>
-                                                <Insets right="15.0" />
-                                             </HBox.margin>
-                                          </HBox>
-                                       </children>
-                                    </HBox>
-                                 </children>
-                              </HBox>
-                              <AnchorPane layoutX="29.0" layoutY="114.0" prefHeight="590.0" prefWidth="854.0" AnchorPane.topAnchor="114.0">
-                                 <children>
-                                    <GridPane fx:id="cart_Container" hgap="20.0" layoutY="1.0" prefHeight="254.0" prefWidth="0.0" vgap="20.0" AnchorPane.topAnchor="1.0">
-                                      <rowConstraints>
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                      </rowConstraints>
-                                    </GridPane>
-                                 </children>
-                              </AnchorPane>
-                           </children></AnchorPane>
                      </content>
                   </ScrollPane>
                </children>

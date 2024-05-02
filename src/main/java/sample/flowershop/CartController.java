@@ -42,7 +42,7 @@ public class CartController {
         cart_img.setImage(image);
         cart_name.setText(product.getName());
         cart_price.setText(String.valueOf(product.getPrice()));
-        cartProduct = product;
+        this.cartProduct = product;
     }
 
     public void setCartDataForShop(Product product) throws URISyntaxException {
@@ -55,20 +55,27 @@ public class CartController {
         cart_img.setImage(image);
         cart_name.setText(product.getName());
         cart_price.setText(String.valueOf(product.getPrice()));
-        cartProduct = product;
+        this.cartProduct = product;
     }
 
     public void setMainContoller(MainSceneContoller mainSceneContoller) {
         this.mainSceneContoller = mainSceneContoller;
     }
 
-    @FXML
+    private int shoppCartSize = 0;
     public void addToShoppingCart(ActionEvent event) {
+        System.out.println("Отработка метода addToShoppingCart(): ");
         ShoppingCart shoppingCart = mainSceneContoller.shoppingCart;
-
-        shoppingCart.addProduct(cartProduct);
-        System.out.println(shoppingCart.getItems());
-        mainSceneContoller.updateShoppingCartDisplay(cartProduct);
-        System.out.println("s");
+        System.out.println("Размер до добавления товара: " + shoppingCart.getItems().size());
+        int currentSize = shoppingCart.getItems().size();
+        shoppingCart.addProduct(this.cartProduct);
+        System.out.println("Айди продукта который хочу добавить: " + this.cartProduct.getId());
+        int newSize = shoppingCart.getItems().size();
+        System.out.println("Размер после добавления товара: " + shoppingCart.getItems().size());
+        if (newSize > currentSize) {
+            mainSceneContoller.updateShoppingCartDisplay(this.cartProduct); // 1h 2h
+            shoppCartSize++;
+        }
+//        System.out.println("s");
     }
 }
