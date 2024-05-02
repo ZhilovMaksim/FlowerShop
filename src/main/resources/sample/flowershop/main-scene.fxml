@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.flowershop.MainSceneContoller">
+   <children>
+      <BorderPane prefHeight="700.0" prefWidth="1200.0">
+         <left>
+            <VBox alignment="TOP_RIGHT" prefHeight="700.0" prefWidth="272.0" style="-fx-background-color: #fff;" stylesheets="@main-scene-design.css" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox prefHeight="270.0" prefWidth="272.0">
+                     <children>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="59.0" prefWidth="272.0">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/home%20(1).png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets left="20.0" right="20.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <Label alignment="CENTER" prefHeight="60.0" prefWidth="206.0" styleClass="left-labels" stylesheets="@main-scene-design.css" text="Home" textFill="#ff8f52">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="59.0" prefWidth="272.0">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/shopping-bag.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets left="20.0" right="20.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <Label alignment="CENTER" prefHeight="59.0" prefWidth="206.0" styleClass="left-labels" stylesheets="@main-scene-design.css" text="Shop">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="59.0" prefWidth="272.0">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/cart.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets left="20.0" right="20.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <Label alignment="CENTER" prefHeight="82.0" prefWidth="205.0" styleClass="left-labels" stylesheets="@main-scene-design.css" text="Korzina">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="59.0" prefWidth="272.0">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/info.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets left="20.0" right="20.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <Label alignment="CENTER" prefHeight="82.0" prefWidth="205.0" styleClass="left-labels" stylesheets="@main-scene-design.css" text="About">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="150.0" />
+                     </VBox.margin>
+                  </VBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="45.0" prefWidth="272.0" styleClass="logOut_hbox" stylesheets="@main-scene-design.css">
+                     <VBox.margin>
+                        <Insets top="170.0" />
+                     </VBox.margin>
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/exit.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Button alignment="CENTER" mnemonicParsing="false" prefHeight="57.0" prefWidth="202.0" styleClass="logOut_btn" stylesheets="@main-scene-design.css" text="LOG OUT" textFill="#ff8f52">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </left>
+         <top>
+            <HBox prefHeight="54.0" prefWidth="1200.0" style="-fx-background-color: #fff;" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="42.0" prefWidth="272.0">
+                     <children>
+                        <Label prefHeight="30.0" prefWidth="71.0" styleClass="flower_shop" stylesheets="@main-scene-design.css" text="Flower" textFill="#ff8f52">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="30.0" prefWidth="132.0" styleClass="flower_shop" stylesheets="@main-scene-design.css" text="Shop">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="54.0" prefWidth="429.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="38.0" prefWidth="324.0" styleClass="search-bar" stylesheets="@main-scene-design.css">
+                           <children>
+                              <TextField maxHeight="-Infinity" prefHeight="27.0" prefWidth="286.0" promptText="Search...." styleClass="search-bar-input" stylesheets="@main-scene-design.css" />
+                              <Pane prefHeight="38.0" prefWidth="46.0" style="-fx-background-color: #ff8f52;" styleClass="search-bar-icon" stylesheets="@main-scene-design.css">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <ImageView fitHeight="23.0" fitWidth="28.0" layoutX="8.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@img/my-search-icon-32px.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="54.0" prefWidth="498.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="62.0" prefWidth="162.0" styleClass="my_profile" stylesheets="@main-scene-design.css" text="My profile">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/user-yellow%201.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <ScrollPane maxHeight="-Infinity" prefHeight="1000.0" prefWidth="200.0" style="-fx-background-color: #dadada;" BorderPane.alignment="CENTER">
+               <content>
+                  <AnchorPane prefHeight="1000.0" prefWidth="912.0" style="-fx-background-color: #dadada;">
+                     <children>
+                        <VBox layoutX="60.0" layoutY="44.0" prefHeight="137.0" prefWidth="222.0">
+                           <children>
+                              <Label text="Flowers,">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label text="what the world">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label text="needs">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <GridPane layoutX="426.0" layoutY="33.0" prefHeight="294.0" prefWidth="446.0" vgap="20.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="110.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="110.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="110.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="105.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="105.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <ImageView fitHeight="137.0" fitWidth="149.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/first_img.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="137.0" fitWidth="149.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+                                 <image>
+                                    <Image url="@img/fourth-img.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="140.0" fitWidth="168.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                                 <image>
+                                    <Image url="@img/sec-img.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="139.0" fitWidth="149.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+                                 <image>
+                                    <Image url="@img/third-img.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="141.0" fitWidth="149.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <image>
+                                    <Image url="@img/fifth-img.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="139.0" fitWidth="149.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <image>
+                                    <Image url="@img/sixth-img.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </GridPane>
+                        <Label layoutX="60.0" layoutY="207.0" text="Browse between hounders of flowers" />
+                        <Button layoutX="60.0" layoutY="258.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="106.0" styleClass="browse-btn" stylesheets="@main-scene-design.css" text="Browse" />
+                        <Label layoutX="412.0" layoutY="401.0" prefHeight="35.0" prefWidth="126.0" text="Best selers">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <HBox fx:id="bestSelers_container" layoutX="356.0" layoutY="453.0" prefHeight="133.0" prefWidth="200.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

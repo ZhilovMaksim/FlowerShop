@@ -2,12 +2,23 @@ package sample.flowershop;
 
 import javafx.animation.Transition;
 import javafx.animation.TranslateTransition;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.InputEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import javafx.util.Duration;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class HelloController {
 
@@ -50,6 +61,29 @@ public class HelloController {
     @FXML
     private Button side_createAccBtn;
 
+    private Stage stage;
+    private Parent root;
+    private Scene scene;
+
+    public void swithcSceneToMain(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("main-scene.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    private String[] questionList = {"What is your favorite color", "What is your favorite food", "What is your hobby"};
+
+    public void regQuestionList() {
+
+        ArrayList<String> listQ = new ArrayList<>(Arrays.asList(questionList));
+
+        ObservableList listData = FXCollections.observableArrayList(listQ);
+        rg_question.setItems(listData);
+
+    }
+
     public void switchSides(ActionEvent event) {
         TranslateTransition slider = new TranslateTransition();
 
@@ -61,6 +95,7 @@ public class HelloController {
             slider.setOnFinished((ActionEvent e) -> {
                 side_alrHavAcc.setVisible(true);
                 side_createAccBtn.setVisible(false);
+                regQuestionList();
             });
 
             slider.play();

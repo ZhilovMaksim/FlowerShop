@@ -1,0 +1,83 @@
+
+.logOut_btn {
+    -fx-background-color:  #fff;
+    -fx-text-fill: #ff8f52;
+    -fx-background-radius: 0 0 0 0;
+    -fx-border-width: 0 0 0 1.5px;
+    -fx-border-color: #ff8f52;
+}
+
+.logOut_btn:hover {
+    -fx-background-color: #ff8f52;
+    -fx-text-fill: #fff;
+    -fx-cursor: hand;
+}
+
+.flower_shop{
+    -fx-font-weight: 500;
+}
+
+.logOut_hbox{
+    -fx-background-color: #fff;
+}
+
+.left-labels {
+    -fx-border-width: 0 0 0 1.5px;
+    -fx-border-color: #dadada;
+}
+
+.my_profile {
+    -fx-border-width: 0 1.5px 0 0;
+    -fx-border-color: #dadada;
+}
+
+.my_profile:hover {
+    -fx-background-color: #dadada;
+    -fx-background-radius: 2px;
+    -fx-cursor: hand;
+    -fx-font-size: 15px;
+}
+
+.left-labels:hover {
+    -fx-background-color: #dadada;
+    -fx-background-radius: 2px;
+    -fx-cursor: hand;
+    -fx-font-size: 15px;
+}
+
+.search-bar {
+    -fx-background-color: #fff;
+    -fx-border-width: 1px;
+    -fx-border-radius: 30%;
+    -fx-border-color: #d9d9d9;
+}
+
+.search-bar-input {
+    -fx-background-color: #fff;
+    -fx-background-radius: 50%;
+    -fx-border-radius: 30%;
+    -fx-border-color: #fff;
+}
+
+.search-bar-icon {
+    -fx-background-radius: 0 45% 45% 0;
+}
+
+.browse-btn{
+    -fx-background-color: #ff8f52;
+    -fx-background-radius: 5px;
+    -fx-text-fill: #fff;
+}
+
+.cart_add-to-shop {
+    -fx-text-fill: #ff8f52;
+    -fx-font-family: "Roboto Light";
+}
+
+/*.cart_add-to-shop:hover {*/
+/*    -fx-font-style: underline;*/
+/*}*/
+
+cart {
+    -fx-font-family: "Roboto Light";
+}

@@ -17,7 +17,7 @@
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="0.0">
          <children>
-            <AnchorPane fx:id="lg_right" layoutX="300.0" prefHeight="400.0" prefWidth="300.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane fx:id="lg_right" layoutX="300.0" prefHeight="400.0" prefWidth="300.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="0.7999999999999545" AnchorPane.topAnchor="0.0">
                <children>
                   <Label layoutX="38.0" layoutY="51.0" styleClass="head-label" stylesheets="@login.css" text="Login Account" textFill="#146366">
                      <font>

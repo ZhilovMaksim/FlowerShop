@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="cart" prefHeight="273.0" prefWidth="220.0" stylesheets="@main-scene-design.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.flowershop.CartController">
+   <children>
+      <ImageView fitHeight="190.0" fitWidth="200.0" layoutX="15.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/fourth-img.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="15.0" layoutY="204.39999389648438" prefHeight="18.0" prefWidth="43.0" text="Name" />
+      <Label layoutX="15.0" layoutY="240.0" text="5$" />
+      <ImageView fitHeight="18.0" fitWidth="30.0" layoutX="123.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/shopping-cart.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="141.0" layoutY="240.0" prefHeight="18.0" prefWidth="64.0" styleClass="cart_add-to-shop" stylesheets="@main-scene-design.css" text="Add to cart" />
+   </children>
+</AnchorPane>
