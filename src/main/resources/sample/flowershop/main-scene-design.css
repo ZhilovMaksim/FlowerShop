@@ -69,6 +69,12 @@
     -fx-text-fill: #fff;
 }
 
+.browse-btn:hover {
+    -fx-effect: dropShadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0.1, 2, 2);
+    -fx-cursor: hand;
+
+}
+
 .cart_add-to-shop-btn {
     -fx-background-color: #fff;
     -fx-text-fill: #ff8f52;
@@ -113,8 +119,46 @@ cart {
     -fx-text-fill: #fff;
 }
 
+.checkout-btn:hover {
+    -fx-effect: dropShadow(three-pass-box, rgba(0, 0, 0, 0), 10, 0, 2, 2);
+    -fx-cursor: hand;
+}
+
 .current-page-btn{
     -fx-text-fill: #ff8f52;
     -fx-font-size: 15px;
 }
 
+.price-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #838383;
+}
+
+.deleteItem{
+    -fx-background-color: #fff;
+}
+
+.deleteItem:hover {
+    -fx-cursor: hand;
+}
+
+.my-profile_left-buttons {
+    -fx-background-color: #fff;
+    -fx-text-fill: #838383;
+}
+.my-profile_left-buttons:hover{
+    -fx-cursor: hand;
+}
+
+.my_profile_input-fields {
+    -fx-background-color: #fff;
+    -fx-border-width: 0.5px;
+    -fx-border-color: #d9d9d9;
+    -fx-border-radius: 5px;
+}
+
+.my_profile_submit-btn{
+    -fx-background-color: #ff8f52;
+    -fx-background-radius: 5px;
+    -fx-text-fill: #fff;
+}

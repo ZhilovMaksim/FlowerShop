@@ -153,7 +153,7 @@
                   <HBox alignment="CENTER" prefHeight="54.0" prefWidth="429.0" />
                   <HBox alignment="CENTER_RIGHT" prefHeight="54.0" prefWidth="498.0">
                      <children>
-                        <Label alignment="CENTER" prefHeight="62.0" prefWidth="162.0" styleClass="my_profile" stylesheets="@main-scene-design.css" text="My profile">
+                        <Label fx:id="myProfileBtn" alignment="CENTER" onMouseClicked="#onClickMyProfile" prefHeight="62.0" prefWidth="162.0" styleClass="my_profile" stylesheets="@main-scene-design.css" text="My profile">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -174,6 +174,147 @@
          <center>
             <StackPane BorderPane.alignment="CENTER">
                <children>
+                  <AnchorPane fx:id="myProfilePage" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f2f2f2;" visible="false">
+                     <children>
+                        <AnchorPane layoutX="42.0" layoutY="52.0" prefHeight="446.0" prefWidth="842.0" style="-fx-background-color: #fff;" styleClass="shopping-cart_empty" stylesheets="@main-scene-design.css">
+                           <children>
+                              <VBox prefHeight="446.0" prefWidth="177.0" spacing="50.0">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="178.0" spacing="8.0">
+                                       <children>
+                                          <ImageView fitHeight="48.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@img/user%20(2).png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <Label fx:id="yourName" prefHeight="58.0" prefWidth="106.0" text="Your name" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets left="15.0" top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <VBox prefHeight="73.0" prefWidth="138.0" spacing="15.0">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="23.0" prefWidth="178.0">
+                                             <children>
+                                                <ImageView fitHeight="22.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@img/orders-icon.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Button fx:id="ordersBtn" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="26.0" prefWidth="158.0" styleClass="my-profile_left-buttons" stylesheets="@main-scene-design.css" text="Orders" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="25.0" prefWidth="178.0">
+                                             <children>
+                                                <ImageView fitHeight="22.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@img/my-info.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Button fx:id="myInfoBtn" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="26.0" prefWidth="162.0" styleClass="my-profile_left-buttons" stylesheets="@main-scene-design.css" text="My information" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets left="40.0" />
+                                       </VBox.margin>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                              <AnchorPane layoutX="178.0" prefHeight="446.0" prefWidth="662.0">
+                                 <children>
+                                    <Label layoutX="29.0" layoutY="22.0" prefHeight="18.0" prefWidth="155.0" text="Your information">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="69.0" fitWidth="96.0" layoutX="38.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@img/user%20(2).png" />
+                                       </image>
+                                    </ImageView>
+                                    <Button fx:id="myProfile_uploadBtn" layoutX="41.0" layoutY="156.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="61.0" text="Upload" />
+                                    <HBox layoutX="185.0" layoutY="74.0" prefHeight="238.0" prefWidth="418.0">
+                                       <children>
+                                          <VBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="257.0" prefWidth="418.0" spacing="5.0">
+                                             <children>
+                                                <HBox prefHeight="77.0" prefWidth="418.0" spacing="20.0">
+                                                   <children>
+                                                      <VBox prefHeight="86.0" prefWidth="199.0" spacing="10.0">
+                                                         <children>
+                                                            <Label text="First Name">
+                                                               <font>
+                                                                  <Font name="System Bold" size="12.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <TextField fx:id="firstNameInput" prefHeight="34.0" prefWidth="0.0" styleClass="my_profile_input-fields" stylesheets="@main-scene-design.css" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="86.0" prefWidth="199.0" spacing="10.0">
+                                                         <children>
+                                                            <Label text="Last Name">
+                                                               <font>
+                                                                  <Font name="System Bold" size="12.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <TextField fx:id="lastNameInput" prefHeight="34.0" prefWidth="0.0" styleClass="my_profile_input-fields" stylesheets="@main-scene-design.css" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="72.0" prefWidth="418.0" spacing="20.0">
+                                                   <children>
+                                                      <VBox prefHeight="54.0" prefWidth="199.0" spacing="10.0">
+                                                         <children>
+                                                            <Label text="Phone number">
+                                                               <font>
+                                                                  <Font name="System Bold" size="12.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <TextField fx:id="phoneNumberInput" prefHeight="34.0" prefWidth="0.0" styleClass="my_profile_input-fields" stylesheets="@main-scene-design.css" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="66.0" prefWidth="199.0" spacing="10.0">
+                                                         <children>
+                                                            <Label text="City">
+                                                               <font>
+                                                                  <Font name="System Bold" size="12.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <TextField fx:id="cityInput" prefHeight="34.0" prefWidth="206.0" styleClass="my_profile_input-fields" stylesheets="@main-scene-design.css" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="64.0" prefWidth="418.0">
+                                                   <children>
+                                                      <VBox prefHeight="66.0" prefWidth="418.0" spacing="10.0">
+                                                         <children>
+                                                            <Label text="Adress">
+                                                               <font>
+                                                                  <Font name="System Bold" size="12.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <TextField fx:id="adressInput" prefHeight="34.0" prefWidth="0.0" styleClass="my_profile_input-fields" stylesheets="@main-scene-design.css" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <Button fx:id="myProfile_submitBtn" layoutX="576.0" layoutY="18.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="71.0" styleClass="my_profile_submit-btn" stylesheets="@main-scene-design.css" text="Submit" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
                   <ScrollPane fx:id="shoppingCart_emty" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" vbarPolicy="NEVER" visible="false">
                      <content>
                         <AnchorPane prefHeight="646.0" prefWidth="926.0" style="-fx-background-color: #f2f2f2;">
@@ -195,7 +336,7 @@
                      <content>
                         <AnchorPane prefHeight="705.0" prefWidth="915.0" style="-fx-background-color: #f2f2f2;">
                            <children>
-                              <VBox layoutX="38.0" layoutY="32.0" prefHeight="338.0" prefWidth="574.0" spacing="20.0" styleClass="shopping-cart_empty" stylesheets="@main-scene-design.css">
+                              <VBox layoutX="38.0" layoutY="32.0" prefHeight="219.0" prefWidth="574.0" spacing="20.0" styleClass="shopping-cart_empty" stylesheets="@main-scene-design.css">
                                  <children>
                                     <Label prefHeight="18.0" prefWidth="73.0" text="Your cart">
                                        <VBox.margin>
@@ -205,9 +346,9 @@
                                           <Font size="14.0" />
                                        </font>
                                     </Label>
-                                    <VBox fx:id="shoppingCart_container" prefHeight="150.0" prefWidth="544.0">
+                                    <VBox fx:id="shoppingCart_container" prefHeight="150.0" prefWidth="544.0" spacing="20.0">
                                        <VBox.margin>
-                                          <Insets left="30.0" />
+                                          <Insets bottom="20.0" left="30.0" />
                                        </VBox.margin>
                                     </VBox>
                                  </children>
@@ -377,7 +518,7 @@
                                  </children>
                               </GridPane>
                               <Label layoutX="60.0" layoutY="207.0" text="Browse between hounders of flowers" />
-                              <Button layoutX="60.0" layoutY="258.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="106.0" styleClass="browse-btn" stylesheets="@main-scene-design.css" text="Browse" />
+                              <Button fx:id="browseBtn" layoutX="60.0" layoutY="258.0" mnemonicParsing="false" onAction="#onClickBrowseBtn" prefHeight="26.0" prefWidth="106.0" styleClass="browse-btn" stylesheets="@main-scene-design.css" text="Browse" />
                               <Label layoutX="412.0" layoutY="401.0" prefHeight="35.0" prefWidth="126.0" text="Best selers">
                                  <font>
                                     <Font size="24.0" />

@@ -41,7 +41,9 @@ public class CartController {
 
         cart_img.setImage(image);
         cart_name.setText(product.getName());
-        cart_price.setText(String.valueOf(product.getPrice()));
+        String price = String.valueOf(product.getPrice());
+        cart_price.setText(price.substring(0, price.indexOf(".")) + "$");
+        cart_price.getStyleClass().add("price-label");
         this.cartProduct = product;
     }
 
@@ -54,7 +56,9 @@ public class CartController {
 
         cart_img.setImage(image);
         cart_name.setText(product.getName());
-        cart_price.setText(String.valueOf(product.getPrice()));
+        String price = String.valueOf(product.getPrice());
+        cart_price.setText(price.substring(0, price.indexOf(".")) + "$");
+        cart_price.getStyleClass().add("price-label");
         this.cartProduct = product;
     }
 
@@ -72,10 +76,13 @@ public class CartController {
         System.out.println("Айди продукта который хочу добавить: " + this.cartProduct.getId());
         int newSize = shoppingCart.getItems().size();
         System.out.println("Размер после добавления товара: " + shoppingCart.getItems().size());
-        if (newSize > currentSize) {
+
+        boolean isNewProductAdded = newSize > currentSize;
+        if (isNewProductAdded) {
             mainSceneContoller.updateShoppingCartDisplay(this.cartProduct); // 1h 2h
             shoppCartSize++;
         }
+        isNewProductAdded = false;
 //        System.out.println("s");
     }
 }

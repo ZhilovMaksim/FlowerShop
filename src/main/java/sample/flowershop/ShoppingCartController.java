@@ -46,12 +46,15 @@ public class ShoppingCartController {
         shoppingCart_name.setText(product.getName());
         String price = String.valueOf(product.getPrice());
         shoppingCart_total.setText(price.substring(0, price.indexOf(".")) + "$");
+        shoppingCart_price.setText("unit price: " + price.substring(0, price.indexOf(".")) + "$");
+        shoppingCart_price.getStyleClass().add("price-label");
         this.product = product;
     }
 
     public void deleteFromShoppingCart(ActionEvent event) {
         ShoppingCart shoppingCart = mainSceneContoller.shoppingCart;
         shoppingCart.removeProduct(product.getId());
+        product.setItemCount(1);
         System.out.println("Отработка метода deleteFromSHoppingCart(): ");
         System.out.println();
         System.out.println("Размер хэш мапы после удаления товара внутри Shopping cart: " + shoppingCart.getItems().size()
