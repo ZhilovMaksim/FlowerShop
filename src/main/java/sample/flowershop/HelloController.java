@@ -17,6 +17,8 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -64,25 +66,25 @@ public class HelloController {
     private Stage stage;
     private Parent root;
     private Scene scene;
-
-    public void swithcSceneToMain(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("main-scene.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+    private void showMessage(String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Сообщение");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+    public void swithcSceneToMain(ActionEvent event) {
+        try {
+            root = FXMLLoader.load(getClass().getResource("main-scene.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace(); // Обработка исключения
+        }
     }
 
-    private String[] questionList = {"What is your favorite color", "What is your favorite food", "What is your hobby"};
-
-    public void regQuestionList() {
-
-        ArrayList<String> listQ = new ArrayList<>(Arrays.asList(questionList));
-
-        ObservableList listData = FXCollections.observableArrayList(listQ);
-        rg_question.setItems(listData);
-
-    }
 
     public void switchSides(ActionEvent event) {
         TranslateTransition slider = new TranslateTransition();
@@ -95,7 +97,6 @@ public class HelloController {
             slider.setOnFinished((ActionEvent e) -> {
                 side_alrHavAcc.setVisible(true);
                 side_createAccBtn.setVisible(false);
-                regQuestionList();
             });
 
             slider.play();
@@ -114,6 +115,47 @@ public class HelloController {
     }
 
     public void initialize() {
+        DatabaseHandler dbHandler = new DatabaseHandler();
+        lg_loginBtn.setOnAction(actionEvent -> {
+            String loginText = lg_inputLogin.getText().trim();
+            String passwordText = lg_inputPass.getText().trim();
+            try {
+                if(loginUser(loginText,passwordText)){
+                    swithcSceneToMain(actionEvent);
+                }
+                else{
+                    showMessage("Неверные данные пользователя!");
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
 
+        });
+        rg_singUpBtn.setOnAction(actionEvent -> {
+            try {
+                dbHandler.signUpUser(rg_loginBtn.getText(),rg_passwordBtn.getText());
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+            showMessage("Пользователь успешно создан! Авторизуйтесь, чтобы войти.");
+            switchSides(actionEvent);
+        });
+    }
+
+    private boolean loginUser(String loginText, String passwordText) throws SQLException, ClassNotFoundException {
+        DatabaseHandler dbHandler = new DatabaseHandler();
+        User user = new User();
+        user.setUsername(loginText);
+        user.setPassword(passwordText);
+        ResultSet result= dbHandler.getUser(user);
+        int counter = 0;
+        while(result.next()){
+            counter++;
+        }
+        return counter >= 1;
     }
 }
