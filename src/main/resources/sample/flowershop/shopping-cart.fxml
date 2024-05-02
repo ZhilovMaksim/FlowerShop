@@ -23,43 +23,53 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
-                  <HBox>
+                  <VBox spacing="5.0">
                      <children>
-                        <Label prefHeight="18.0" prefWidth="57.0" text="unit price" />
-                        <Label fx:id="shoppingCart_price" text="10$" />
+                        <HBox>
+                           <children>
+                              <Label fx:id="shoppingCart_price" prefHeight="18.0" prefWidth="106.0" text="unit price">
+                                 <HBox.margin>
+                                    <Insets left="3.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="79.0" spacing="10.0" styleClass="increment_container" stylesheets="@main-scene-design.css">
+                           <children>
+                              <Button fx:id="decrementBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#decrementProduct" prefHeight="11.0" prefWidth="14.0" style="-fx-background-color: #fff;">
+                                 <graphic>
+                                    <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@img/minus.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Label fx:id="counterText" alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="18.0" text="1" />
+                              <Button fx:id="incrementBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#incrementProduct" prefHeight="11.0" prefWidth="14.0" style="-fx-background-color: #fff;">
+                                 <graphic>
+                                    <ImageView fitHeight="11.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@img/plus.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
                      </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="79.0" spacing="10.0" styleClass="increment_container" stylesheets="@main-scene-design.css">
-                     <children>
-                        <Button fx:id="decrementBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#decrementProduct" prefHeight="11.0" prefWidth="14.0" style="-fx-background-color: #fff;">
-                           <graphic>
-                              <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@img/minus.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                           <HBox.margin>
-                              <Insets left="5.0" />
-                           </HBox.margin>
-                        </Button>
-                        <Label fx:id="counterText" alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="18.0" text="1" />
-                        <Button fx:id="incrementBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#incrementProduct" prefHeight="11.0" prefWidth="14.0" style="-fx-background-color: #fff;">
-                           <graphic>
-                              <ImageView fitHeight="11.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@img/plus.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                     </children>
-                  </HBox>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </VBox>
                </children>
             </VBox>
             <VBox alignment="TOP_RIGHT" prefHeight="150.0" prefWidth="108.0">
                <children>
-                  <Button fx:id="shoppingCart_deleteItem" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteFromShoppingCart" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: #fff;">
+                  <Button fx:id="shoppingCart_deleteItem" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteFromShoppingCart" prefHeight="20.0" prefWidth="20.0" styleClass="deleteItem" stylesheets="@main-scene-design.css">
                      <graphic>
                         <ImageView fitHeight="16.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -68,7 +78,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <HBox alignment="TOP_RIGHT" spacing="3.0">
+                  <HBox alignment="CENTER_RIGHT" spacing="3.0">
                      <children>
                         <Label prefHeight="18.0" prefWidth="30.0" text="Total">
                            <font>

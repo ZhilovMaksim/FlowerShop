@@ -6,8 +6,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -55,6 +57,32 @@ public class MainSceneContoller {
 
     @FXML
     private Label totalPrice;
+    @FXML
+    private Button browseBtn;
+
+    // MY PROFILE ID
+    @FXML
+    private TextField adressInput;
+    @FXML
+    private TextField cityInput;
+    @FXML
+    private TextField firstNameInput;
+    @FXML
+    private TextField lastNameInput;
+    @FXML
+    private Button myInfoBtn;
+    @FXML
+    private Label myProfileBtn;
+    @FXML
+    private AnchorPane myProfilePage;
+    @FXML
+    private Button myProfile_submitBtn;
+    @FXML
+    private Button myProfile_uploadBtn;
+    @FXML
+    private Button ordersBtn;
+    @FXML
+    private TextField phoneNumberInput;
     private HashMap<Integer, Product> cartItems = new HashMap<>();
 
 
@@ -92,6 +120,22 @@ public class MainSceneContoller {
         homeBtn.getStyleClass().remove("current-page-btn");
         shopBtn.getStyleClass().remove("current-page-btn");
         korzinaBtn.getStyleClass().add("current-page-btn");
+    }
+    public void onClickBrowseBtn() {
+        homePage.setVisible(false);
+        shopPage.setVisible(true);
+//        shoppingCart_emty.setVisible(false);
+        shopBtn.getStyleClass().add("current-page-btn");
+        homeBtn.getStyleClass().remove("current-page-btn");
+        korzinaBtn.getStyleClass().remove("current-page-btn");
+    }
+    @FXML
+    public void onClickMyProfile() {
+        homePage.setVisible(false);
+        shopPage.setVisible(false);
+        shoppingCartPane.setVisible(false);
+        shoppingCart_emty.setVisible(false);
+        myProfilePage.setVisible(true);
     }
 
 //    private void setColorToPageBtn(){
@@ -176,19 +220,19 @@ public class MainSceneContoller {
             System.out.println(productId);
         }
 
-        Product lastProduct = null;
-        int lastProductId = 0;
-        for (int productId: cartItems.keySet()) {
-            lastProductId = productId;
-        }
-        lastProduct = cartItems.get(lastProductId);
+//        Product lastProduct = null;
+//        int lastProductId = 0;
+//        for (int productId: cartItems.keySet()) {
+//            lastProductId = productId;
+//        }
+//        lastProduct = cartItems.get(lastProductId);
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("shopping-cart.fxml"));
             Parent cartRoot = fxmlLoader.load();
             ShoppingCartController shoppingCartController = fxmlLoader.getController();
             this.shoppingCartController = shoppingCartController;
-            shoppingCartController.setShoppingCart_Data(lastProduct);
+            shoppingCartController.setShoppingCart_Data(product);
 
             shoppingCart_container.getChildren().add(cartRoot);
         } catch (IOException e) {
@@ -207,7 +251,7 @@ public class MainSceneContoller {
             System.out.println(cartItems.size());
             updateTotalDisplay();
         }
-        if (shoppingCart.getItems().isEmpty()) {
+        if (cartItems.isEmpty()) {
             shoppingCartPane.setVisible(false);
             shoppingCart_emty.setVisible(true);
         }
@@ -218,9 +262,12 @@ public class MainSceneContoller {
     }
 
     public void updateTotalDisplay(){
+        System.out.println("Отработка метода updateTotalDisplay(): ");
         total = 0;
         shoppingCartController.setMainContoller(this);
         total = shoppingCart.calculateTotal();
+        System.out.println(shoppingCart.getItems().size());
+        System.out.println("Total: " + total);
 //        System.out.println("Counter inside updateTotalDisplay(): " + counter);
 //        total = // lambda itemPirce, itemCounter: sum(itemPrice * itemCounter)
         int itemCounter = 0;
