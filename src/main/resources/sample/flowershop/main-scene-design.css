@@ -24,6 +24,7 @@
 .left-labels {
     -fx-border-width: 0 0 0 1.5px;
     -fx-border-color: #dadada;
+    -fx-font-size: 15px;
 }
 
 .my_profile {
@@ -42,7 +43,6 @@
     -fx-background-color: #dadada;
     -fx-background-radius: 2px;
     -fx-cursor: hand;
-    -fx-font-size: 15px;
 }
 
 .search-bar {
@@ -69,15 +69,52 @@
     -fx-text-fill: #fff;
 }
 
-.cart_add-to-shop {
+.cart_add-to-shop-btn {
+    -fx-background-color: #fff;
     -fx-text-fill: #ff8f52;
     -fx-font-family: "Roboto Light";
+}
+
+.cart_add-to-shop-btn:hover {
+    -fx-cursor: hand;
 }
 
 /*.cart_add-to-shop:hover {*/
 /*    -fx-font-style: underline;*/
 /*}*/
 
+.cart_shadow {
+    -fx-effect: dropShadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0.1, 2, 8);
+}
+
+.shopping-cart_empty {
+    -fx-background-color: #fff;
+    -fx-background-radius: 5px;
+    -fx-effect: dropShadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0.1, 2, 5);
+}
+
 cart {
     -fx-font-family: "Roboto Light";
 }
+
+.plus-minus_btn {
+    -fx-background-color: #fff;
+}
+
+.increment_container{
+    -fx-border-width: 1px;
+    -fx-border-color: #ff8f52;
+    -fx-border-radius: 5px;
+}
+
+.checkout-btn{
+    -fx-background-color: #ff8f52;
+    -fx-background-radius: 5px;
+    -fx-text-fill: #fff;
+}
+
+.current-page-btn{
+    -fx-text-fill: #ff8f52;
+    -fx-font-size: 15px;
+}
+

@@ -1,22 +1,27 @@
 package sample.flowershop;
-import sample.flowershop.Product;
-
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
-import java.util.Objects;
+import java.io.File;
+import java.io.IOException;
+import java.net.URISyntaxException;
 
 public class CartController {
     @FXML
     private AnchorPane cart;
 
     @FXML
-    private Label cart_addBtn;
+    private Button cart_addBtn;
 
     @FXML
     private ImageView cart_img;
@@ -26,13 +31,51 @@ public class CartController {
 
     @FXML
     private Label cart_price;
+    private MainSceneContoller mainSceneContoller;
+    private Product cartProduct;
 
-    public void setCartData(Product product) {
+
+    public void setCartData(Product product) throws URISyntaxException {
         System.out.println(product.getUrlImage());
-        Image image = new Image(CartController.class.getResourceAsStream(product.getUrlImage()));
+        Image image = new Image(new File(product.getUrlImage()).toURI().toString());
 
         cart_img.setImage(image);
         cart_name.setText(product.getName());
         cart_price.setText(String.valueOf(product.getPrice()));
+        this.cartProduct = product;
+    }
+
+    public void setCartDataForShop(Product product) throws URISyntaxException {
+        System.out.println(product.getUrlImage());
+        Image image = new Image(new File(product.getUrlImage()).toURI().toString());
+
+//        cart.setPrefWidth(200);
+//        cart.setMaxWidth(200);
+
+        cart_img.setImage(image);
+        cart_name.setText(product.getName());
+        cart_price.setText(String.valueOf(product.getPrice()));
+        this.cartProduct = product;
+    }
+
+    public void setMainContoller(MainSceneContoller mainSceneContoller) {
+        this.mainSceneContoller = mainSceneContoller;
+    }
+
+    private int shoppCartSize = 0;
+    public void addToShoppingCart(ActionEvent event) {
+        System.out.println("Отработка метода addToShoppingCart(): ");
+        ShoppingCart shoppingCart = mainSceneContoller.shoppingCart;
+        System.out.println("Размер до добавления товара: " + shoppingCart.getItems().size());
+        int currentSize = shoppingCart.getItems().size();
+        shoppingCart.addProduct(this.cartProduct);
+        System.out.println("Айди продукта который хочу добавить: " + this.cartProduct.getId());
+        int newSize = shoppingCart.getItems().size();
+        System.out.println("Размер после добавления товара: " + shoppingCart.getItems().size());
+        if (newSize > currentSize) {
+            mainSceneContoller.updateShoppingCartDisplay(this.cartProduct); // 1h 2h
+            shoppCartSize++;
+        }
+//        System.out.println("s");
     }
 }
