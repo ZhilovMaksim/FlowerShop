@@ -148,6 +148,16 @@ cart {
 }
 .my-profile_left-buttons:hover{
     -fx-cursor: hand;
+    -fx-font-size: 14px;
+}
+
+.my_profile_upload-btn{
+    -fx-background-color: #fff;
+    -fx-text-fill: #ff8f52;
+}
+
+.my_profile_upload-btn:hover {
+    -fx-cursor: hand;
 }
 
 .my_profile_input-fields {
@@ -161,4 +171,22 @@ cart {
     -fx-background-color: #ff8f52;
     -fx-background-radius: 5px;
     -fx-text-fill: #fff;
+}
+
+.my_profile_submit-btn:hover{
+    -fx-cursor: hand;
+}
+
+
+.aboutUsCards {
+    -fx-background-color: #fff;
+    -fx-effect: dropShadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0.1, 2, 5);
+    -fx-background-radius: 10px;
+}
+
+.aboutUsFields{
+    -fx-border-width: 1px;
+    -fx-border-color: #d9d9d9;
+    -fx-text-fill: #838383;
+    -fx-border-radius: 7px;
 }
