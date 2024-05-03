@@ -10,6 +10,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -42,6 +44,8 @@ public class MainSceneContoller {
 
     @FXML
     private ScrollPane shoppingCartPane;
+    @FXML
+    private ScrollPane aboutUs;
 
     @FXML
     private VBox shoppingCart_container;
@@ -51,7 +55,8 @@ public class MainSceneContoller {
 
     @FXML
     private Label korzinaBtn;
-
+    @FXML
+    private Label aboutUsBtn;
     @FXML
     private Label subtotalForItems;
 
@@ -73,6 +78,8 @@ public class MainSceneContoller {
     private Button myInfoBtn;
     @FXML
     private Label myProfileBtn;
+    @FXML
+    private ImageView myInfoIcon;
     @FXML
     private AnchorPane myProfilePage;
     @FXML
@@ -111,6 +118,7 @@ public class MainSceneContoller {
         homeBtn.getStyleClass().add("current-page-btn");
         shopBtn.getStyleClass().remove("current-page-btn");
         korzinaBtn.getStyleClass().remove("current-page-btn");
+        aboutUsBtn.getStyleClass().remove("current-page-btn");
     }
     @FXML
     private void onClickKorzina() {
@@ -120,6 +128,7 @@ public class MainSceneContoller {
         homeBtn.getStyleClass().remove("current-page-btn");
         shopBtn.getStyleClass().remove("current-page-btn");
         korzinaBtn.getStyleClass().add("current-page-btn");
+        aboutUsBtn.getStyleClass().remove("current-page-btn");
     }
     public void onClickBrowseBtn() {
         homePage.setVisible(false);
@@ -128,6 +137,8 @@ public class MainSceneContoller {
         shopBtn.getStyleClass().add("current-page-btn");
         homeBtn.getStyleClass().remove("current-page-btn");
         korzinaBtn.getStyleClass().remove("current-page-btn");
+        aboutUsBtn.getStyleClass().remove("current-page-btn");
+
     }
     @FXML
     public void onClickMyProfile() {
@@ -136,27 +147,29 @@ public class MainSceneContoller {
         shoppingCartPane.setVisible(false);
         shoppingCart_emty.setVisible(false);
         myProfilePage.setVisible(true);
+        setColorToMyProfilePage();
     }
 
-//    private void setColorToPageBtn(){
-//        if (homePage.isVisible()) {
-//            homePage.getStyleClass().add("current-page-btn");
-//            shopBtn.getStyleClass().remove("current-page-btn");
-//            korzinaBtn.getStyleClass().remove("current-page-btn");
-//        }
-//        if (shopPage.isVisible()) {
-//            homePage.getStyleClass().remove("current-page-btn");
-//            shopBtn.getStyleClass().add("current-page-btn");
-//            korzinaBtn.getStyleClass().remove("current-page-btn");
-//        }
-//        if (shoppingCart_emty.isVisible() || shoppingCartPane.isVisible()) {
-//            homePage.getStyleClass().remove("current-page-btn");
-//            shopBtn.getStyleClass().remove("current-page-btn");
-//            korzinaBtn.getStyleClass().add("current-page-btn");
-//        }
-//    }
+    @FXML
+    public void onCliclAboutUs() {
+        homePage.setVisible(false);
+        shopPage.setVisible(false);
+        shoppingCartPane.setVisible(false);
+        shoppingCart_emty.setVisible(false);
+        myProfilePage.setVisible(false);
+        aboutUs.setVisible(true);
+        shopBtn.getStyleClass().remove("current-page-btn");
+        homeBtn.getStyleClass().remove("current-page-btn");
+        korzinaBtn.getStyleClass().remove("current-page-btn");
+        aboutUsBtn.getStyleClass().add("current-page-btn");
+    }
 
-
+    @FXML
+    private void setColorToMyProfilePage() {
+        myInfoBtn.setStyle("-fx-text-fill: #ff8f52");
+        Image image = new Image(getClass().getResourceAsStream("img/user-yellow 1.png"));
+        myInfoIcon.setImage(image);
+    }
 
     public void initialize() {
 //        setColorToPageBtn();
@@ -309,7 +322,7 @@ public class MainSceneContoller {
     private List<Product> flowers() {
         List<Product> fl = new ArrayList<>();
 
-        Product product = new Product(1, "Daisy", 5, "Huinya");
+        Product product = new Product(1, "Peterwinlie", 5, "Huinya");
         product.setUrlImage("src/main/resources/sample/flowershop/img/bestSeler-1.png");
         fl.add(product);
 
@@ -317,11 +330,11 @@ public class MainSceneContoller {
         product2.setUrlImage("src/main/resources/sample/flowershop/img/perwinkie.png");
         fl.add(product2);
 
-        Product product3 = new Product(3, "Daisy", 5, "Huinya");
+        Product product3 = new Product(3, "Sun flower", 5, "Huinya");
         product3.setUrlImage("src/main/resources/sample/flowershop/img/bestSeler-2.png");
         fl.add(product3);
 
-        Product product4 = new Product(4, "Daisy", 5, "Huinya");
+        Product product4 = new Product(4, "White Roses", 5, "Huinya");
         product4.setUrlImage("src/main/resources/sample/flowershop/img/bestSeler-3.png");
         fl.add(product4);
 
