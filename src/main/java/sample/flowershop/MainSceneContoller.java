@@ -209,6 +209,11 @@ public class MainSceneContoller {
                 throw new RuntimeException(e);
             }
         }
+        myProfile_submitBtn.setOnAction(actionEvent -> {
+            String address = adressInput.getText();
+
+        });
+
     }
 
     public void updateShoppingCartDisplay(Product product) {

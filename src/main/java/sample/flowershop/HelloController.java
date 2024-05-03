@@ -1,9 +1,6 @@
 package sample.flowershop;
 
-import javafx.animation.Transition;
 import javafx.animation.TranslateTransition;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,7 +8,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.input.InputEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -19,8 +15,7 @@ import javafx.util.Duration;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class HelloController {
 
@@ -115,12 +110,15 @@ public class HelloController {
     }
 
     public void initialize() {
+        AtomicInteger loggedInUserId = new AtomicInteger(-1);
         DatabaseHandler dbHandler = new DatabaseHandler();
         lg_loginBtn.setOnAction(actionEvent -> {
             String loginText = lg_inputLogin.getText().trim();
             String passwordText = lg_inputPass.getText().trim();
             try {
                 if(loginUser(loginText,passwordText)){
+                    int userId = dbHandler.getUserId(loginText, passwordText);
+                    loggedInUserId.set(userId);
                     swithcSceneToMain(actionEvent);
                 }
                 else{
@@ -146,16 +144,16 @@ public class HelloController {
         });
     }
 
-    private boolean loginUser(String loginText, String passwordText) throws SQLException, ClassNotFoundException {
-        DatabaseHandler dbHandler = new DatabaseHandler();
-        User user = new User();
-        user.setUsername(loginText);
-        user.setPassword(passwordText);
-        ResultSet result= dbHandler.getUser(user);
-        int counter = 0;
-        while(result.next()){
-            counter++;
+        private boolean loginUser(String loginText, String passwordText) throws SQLException, ClassNotFoundException {
+            DatabaseHandler dbHandler = new DatabaseHandler();
+            User user = new User();
+            user.setUsername(loginText);
+            user.setPassword(passwordText);
+            ResultSet result= dbHandler.getUser(user);
+            int counter = 0;
+            while(result.next()){
+                counter++;
+            }
+            return counter >= 1;
         }
-        return counter >= 1;
-    }
 }

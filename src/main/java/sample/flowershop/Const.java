@@ -5,6 +5,12 @@ public class Const {
     public static final String USER_ID = "user_id";
     public static final String USERNAME = "username";
     public static final String USER_PASSWORD = "password";
+    public static final String USER_FIRST_NAME = "firstname";
+    public static final String USER_LAST_NAME = "lastname";
+    public static final String USER_CITY = "city";
+    public static final String USER_ADDRESS = "address";
+    public static final String USER_PHONE_NUMBER = "phone_number";
+
 
     public static final String PRODUCT_TABLE = "products";
     public static final String PRODUCT_ID = "product_id";
