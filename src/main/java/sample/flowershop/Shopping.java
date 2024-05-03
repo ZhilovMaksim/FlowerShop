@@ -61,7 +61,32 @@ class Product{
         this.price = price;
     }
 }
+class Flower extends Product {
+    public Flower(int id, String name, double price, String description) {
+        super(id, name, price, description);
+    }
+}
 
+class Bouquet extends Product {
+    private List<Flower> flowers;
+
+    public Bouquet(int id, String name, double price, String description) {
+        super(id, name, price, description);
+        this.flowers = new ArrayList<>();
+    }
+
+    public void addFlower(Flower flower) {
+        flowers.add(flower);
+    }
+
+    public void removeFlower(Flower flower) {
+        flowers.remove(flower);
+    }
+
+    public List<Flower> getFlowers() {
+        return flowers;
+    }
+}
 class ShoppingCart {
     private Map<Integer, Product> items;
 
